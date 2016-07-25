@@ -19,6 +19,7 @@ class CartItem {
   getUnit() {
     return this.item.unit;
   }
+ 
 
   static  buildCartItems(tags, allItems) {
     const cartItems = [];
