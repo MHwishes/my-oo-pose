@@ -84,7 +84,6 @@ function buildReceipt(receiptItems) {
     savedTotal += receiptItem.saved;
   }
 
-  //return {receiptItems, total, savedTotal}
   return new Receipt(receiptItems, total, savedTotal);
 }
 
