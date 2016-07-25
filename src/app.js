@@ -11,8 +11,7 @@ function printReceipt(tags) {
 
   const receiptItems = ReceiptItem.buildReceiptItems(cartItems, Promotion.all());
 
-  //const receipt = Receipt.buildReceipt(receiptItems);
-  const  receipt=new Receipt(receiptItems);
+  const receipt = new Receipt(receiptItems);
 
   const receiptText = receipt.buildReceiptText();
 
