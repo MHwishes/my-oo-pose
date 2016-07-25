@@ -1,6 +1,7 @@
 
 const  Item=require('./models/item.js');
 const Promotion=require('./models/promotion.js');
+const CartItem=require('./models/cart-item.js');
 
 function printReceipt(tags) {
 
@@ -31,7 +32,8 @@ function buildCartItems(tags, allItems) {
       cartItem.count += count;
     } else {
       const item = allItems.find(item => item.barcode === barcode);
-      cartItems.push({item, count});
+     // cartItems.push({item, count});
+      cartItems.push(new CartItem(item,count));
     }
   }
 
