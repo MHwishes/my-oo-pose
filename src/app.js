@@ -2,6 +2,7 @@ const Item = require('./models/item.js');
 const Promotion = require('./models/promotion.js');
 const CartItem = require('./models/cart-item.js');
 const ReceiptItem = require('./models/receipt-item.js');
+const Receipt = require('./models/receipt.js');
 
 
 function printReceipt(tags) {
@@ -33,7 +34,7 @@ function buildCartItems(tags, allItems) {
       cartItem.count += count;
     } else {
       const item = allItems.find(item => item.barcode === barcode);
-      // cartItems.push({item, count});
+
       cartItems.push(new CartItem(item, count));
     }
   }
@@ -48,7 +49,6 @@ function buildReceiptItems(cartItems, allPromotions) {
 
     const {saved, subtotal} = discount(cartItem.count, cartItem.item.price, promotionType);
 
-    // return {cartItem, saved, subtotal};
     return new ReceiptItem(cartItem, saved, subtotal);
   });
 }
@@ -84,7 +84,8 @@ function buildReceipt(receiptItems) {
     savedTotal += receiptItem.saved;
   }
 
-  return {receiptItems, total, savedTotal}
+  //return {receiptItems, total, savedTotal}
+  return new Receipt(receiptItems, total, savedTotal);
 }
 
 function buildReceiptText(receipt) {
