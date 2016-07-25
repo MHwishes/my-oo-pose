@@ -14,7 +14,6 @@ class Receipt {
     this.savedTotal = savedTotal;
   }
 
-
   buildReceiptText() {
 
     function formatMoney(money) {

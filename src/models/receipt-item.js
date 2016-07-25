@@ -4,19 +4,29 @@ class ReceiptItem {
     this.saved = saved;
     this.subtotal = subtotal
   }
+
   getName(){
+
     return this.cartItem.getName();
   }
+
   getBarcode(){
+
     return this.cartItem.getBarcode();
   }
+
   getUnit(){
+
     return this.cartItem.getUnit();
   }
+
   getPrice(){
+
     return this.cartItem.getPrice();
   }
+
   getCount(){
+
     return this.cartItem.count;
   }
 
@@ -51,7 +61,6 @@ class ReceiptItem {
       return new ReceiptItem(cartItem, saved, subtotal);
     });
   }
-
 }
 
 module.exports = ReceiptItem;
